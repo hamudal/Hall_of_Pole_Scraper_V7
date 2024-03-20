@@ -71,28 +71,28 @@ def main():
                         url, all_pole_studio_data, all_workshops_data, all_workshop_details_data, all_urls_data
                     )
 
+            # Merge workshops data
+            workshops_details_merged = pd.merge(all_workshop_details_data, all_workshops_data, on=['Workshopname', 'URL_E'], how='inner')
+
             # Save files
             if save_csv:
                 if not os.path.exists("CSV"):
                     os.makedirs("CSV")
                 all_pole_studio_data.to_csv("CSV/Pole_Studio_Übersicht_S.csv", index=False)
-                all_workshops_data.to_csv("CSV/Workshop_Liste_SW.csv", index=False)
-                all_workshop_details_data.to_csv("CSV/Workshop_Übersicht_E.csv", index=False)
+                workshops_details_merged.to_csv("CSV/Workshop_Details.csv", index=False)
                 all_urls_data.to_csv("CSV/All_URLs.csv", index=False)
 
             if save_excel:
                 if not os.path.exists("Excel"):
                     os.makedirs("Excel")
                 all_pole_studio_data.to_excel("Excel/Pole_Studio_Übersicht_S.xlsx", index=False)
-                all_workshops_data.to_excel("Excel/Workshop_Liste_SW.xlsx", index=False)
-                all_workshop_details_data.to_excel("Excel/Workshop_Übersicht_E.xlsx", index=False)
+                workshops_details_merged.to_excel("Excel/Workshop_Details.xlsx", index=False)
                 all_urls_data.to_excel("Excel/All_URLs.xlsx", index=False)
 
             # Show processed data
             st.write("Processed data:")
             st.write(all_pole_studio_data)
-            st.write(all_workshops_data)
-            st.write(all_workshop_details_data)
+            st.write(workshops_details_merged)
             st.write(all_urls_data)
 
 if __name__ == "__main__":
