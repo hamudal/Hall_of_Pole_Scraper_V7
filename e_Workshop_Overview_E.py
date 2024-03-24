@@ -36,7 +36,7 @@ def scrape_workshop_details(url):
 
     # Creating the DataFrame
     workshop_df = pd.DataFrame({
-        'Workshopname': [workshop_name],
+        'Workshop': [workshop_name],
         'Kategorie': [level],
         'Datum': [date],
         'Land' : [""],

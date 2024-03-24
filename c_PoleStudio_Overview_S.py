@@ -97,13 +97,13 @@ def scrape_pole_studio(url):
 
     # Creating the dictionary and returning it as a DataFrame
     pole_studio_overview = {
-        'PoleStudio_Name': pole_studio_name,
+        'Pole_Studio': pole_studio_name,
         'Adresse': address,
         'PLZ': postal_code,
         'Stadt': town,
         'Straße': street,
-        'Buttons': overview_buttons,
-        'Pole Studio Beschreibung': description_text,
+        'Data_Option': overview_buttons,
+        'Pole_Studio_Beschreibung': description_text,
         'E-Mail': contact_info['E-Mail'],
         'Homepage': contact_info['Homepage'],
         'Telefon': contact_info['Telefon'],
@@ -114,7 +114,7 @@ def scrape_pole_studio(url):
 
     pole_studio_df = pd.DataFrame([pole_studio_overview])
     pole_studio_df['Created Date'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    pole_studio_df['Updated Date'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    # pole_studio_df['Updated Date'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     return pole_studio_df
 

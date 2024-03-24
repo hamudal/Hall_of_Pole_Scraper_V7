@@ -26,7 +26,7 @@ def scrape_workshops(url):
 
     # Dictionary to store workshop information
     workshop_data = {
-        'Workshopname': [],
+        'Workshop': [],
         'Preis': [],
         'Einheiten': [],
         'Pole Studio': [],
@@ -38,7 +38,7 @@ def scrape_workshops(url):
 
     # Iterate through elements and extract information
     for workshop in workshop_elements:
-        workshop_data['Workshopname'].append(workshop.find('h4').text)
+        workshop_data['Workshop'].append(workshop.find('h4').text)
         workshop_data['Preis'].append(workshop.find('div', class_='marketplace-tile__price').text)
         workshop_data['Einheiten'].append(workshop.find('small', class_='u-text-bold').text)
         
