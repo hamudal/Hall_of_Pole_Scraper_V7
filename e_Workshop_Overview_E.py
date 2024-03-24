@@ -41,7 +41,7 @@ def scrape_workshop_details(url):
         'Datum': [date],
         'Land' : [""],
         'Location': [location],
-        'Studio Name': [studio_name],
+        'Pole Studio': [studio_name],
         'URL_E' : [url],
         'Art' : ['Workshop'],
         'Level' : [""],
