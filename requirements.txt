@@ -1,0 +1,6 @@
+datetime
+logging
+requests
+beautifulsoup4
+pandas
+tqdm
